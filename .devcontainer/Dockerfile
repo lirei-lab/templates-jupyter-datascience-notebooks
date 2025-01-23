@@ -1,4 +1,4 @@
-FROM quay.io/jupyter/scipy-notebook:latest
+FROM quay.io/jupyter/pytorch-notebook:cuda12-python-3.11.8
 
 USER root
 # Generally, Dev Container Features assume that the non-root user (in this case jovyan)
