@@ -3,10 +3,15 @@
 {
 	"name": "Jupyter Data Science Notebooks",
 	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	"runArgs": [
-	    "--gpus=all"
+	    "dockerfile": "Dockerfile",  // location of Dockerfile relative to .devcontainer folder
+	    "args": {
+	      // OPTIONAL: only when using GPUs
+	      "runtime": "nvidia"
+	    }
+	  },
+	  "runArgs": [
+	    // OPTIONAL: only when using GPUs
+	    "--runtime=nvidia"
 	  ],
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
@@ -41,7 +46,7 @@
 			"extensions": ["ms-python.python", "ms-toolsai.jupyter"]
 		}
 	},
-	"remoteUser": "jovyan"
+	// "remoteUser": "jovyan"
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
 
