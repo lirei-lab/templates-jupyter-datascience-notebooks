@@ -5,6 +5,9 @@
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
+	"runArgs": [
+	    "--gpus=all"
+	  ],
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
 		"ghcr.io/devcontainers/features/common-utils:2": {
@@ -37,7 +40,8 @@
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": ["ms-python.python", "ms-toolsai.jupyter"]
 		}
-	}
+	},
+	"remoteUser": "jovyan"
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "pip3 install --user -r requirements.txt",
 
