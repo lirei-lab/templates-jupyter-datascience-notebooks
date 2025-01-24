@@ -1,9 +1,8 @@
 FROM quay.io/jupyter/pytorch-notebook:cuda12-python-3.11.8
 
 USER root
-# Generally, Dev Container Features assume that the non-root user (in this case jovyan)
-# is in a group with the same name (in this case jovyan). So we must first make that so.
-RUN groupadd jovyan \
-    && usermod -g jovyan -a -G users jovyan
+# Add the 'users' group if it doesn't already exist, then add jovyan to it
+RUN groupadd -f users \
+    && usermod -a -G users jovyan
 
 USER jovyan
